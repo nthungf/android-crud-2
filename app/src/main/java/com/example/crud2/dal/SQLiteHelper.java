@@ -61,6 +61,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             list.add(new Book(id, ten, tacGia, phamVi, doiTuong, danhGia));
         }
         System.out.println("get all completed");
+        st.close();
         return list;
     }
 
@@ -70,6 +71,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         String[] args = {i.getTen(), i.getTacGia(), i.getPhamVi(), i.getDoiTuong(), Integer.toString(i.getDanhGia())};
         SQLiteDatabase st = getWritableDatabase();
         st.execSQL(sql, args);
+        st.close();
     }
 
     // update item
@@ -116,6 +118,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             list.add(new Book(id, ten, tacGia, phamVi, doiTuong, danhGia));
         }
         System.out.println("Search completed");
+        st.close();
         return list;
     }
 
@@ -135,6 +138,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             list.add(new Book(id, ten, tacGia, phamVi, doiTuong, danhGia));
         }
         System.out.println("get stat completed");
+        st.close();
         return list;
     }
 }
